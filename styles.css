@@ -29,6 +29,14 @@ a {
   color: inherit;
 }
 
+/*
+ * Hero / page header styling
+ *
+ * By default the header uses the primary hero image stored in the assets
+ * directory. An overlay is applied via a pseudo-element to improve text
+ * readability and give the hero more depth. The header is positioned
+ * relative so that the overlay and content stack correctly.
+ */
 header {
   position: relative;
   min-height: 60vh;
@@ -39,8 +47,28 @@ header {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  background-image: url('assets/hero.png');
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+}
+
+/* Dark overlay to improve contrast on hero images */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Place header content above the overlay */
+header > * {
+  position: relative;
+  z-index: 1;
 }
 
 header h1 {
@@ -81,6 +109,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+  /* Semi-transparent backdrop so links remain legible over the hero image */
+  background: rgba(0, 47, 95, 0.6);
+  backdrop-filter: blur(4px);
 }
 
 nav img {
@@ -98,6 +129,12 @@ nav a {
   font-weight: 600;
   padding: 0.5rem;
   transition: color 0.3s;
+}
+
+/* Highlight the current page in the navigation */
+nav a.active {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 nav a:hover {
@@ -141,6 +178,14 @@ section p {
 .card h3 {
   font-family: 'Playfair Display', serif;
   margin-bottom: 0.75rem;
+}
+
+/* Icon styling for cards */
+.icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 /* Pricing table */
