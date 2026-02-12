@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Client – Regency Care Group</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="assets/logo.png" alt="Regency Care Group"></a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="client.html" class="active">Become a Client</a></li>
+            <li><a href="caregiver.html">Join Our Network</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header style="background-image:url('assets/hero.png');min-height:40vh;">
+        <h1>Become a Client</h1>
+        <p>Tell us about your family so we can begin designing a compatible match.</p>
+    </header>
+    <section>
+        <h2>Who We Serve</h2>
+        <p>We work with affluent families in Orange County seeking private in‑home care for aging parents (70+), adults with special needs, chronic conditions, or post‑surgical recovery. Our clients are done with résumé matchers and want someone who understands relational chemistry.</p>
+        <p>If this sounds like you, complete the form below to schedule a discovery call. We’ll use the information to prepare for our 90‑minute assessment.</p>
+    </section>
+    <section>
+        <h2>Client Intake Form</h2>
+        <form action="mailto:info@regencycaregroup.com" method="post" enctype="text/plain">
+            <label for="decisionMaker">Primary Decision‑Maker Name</label>
+            <input type="text" id="decisionMaker" name="decisionMaker" required>
+
+            <label for="relation">Relationship to Care Recipient</label>
+            <input type="text" id="relation" name="relation" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="bestTime">Best Times to Reach You</label>
+            <input type="text" id="bestTime" name="bestTime">
+
+            <label for="others">Other Decision‑Influencers (Names & Relationships)</label>
+            <textarea id="others" name="others" rows="2"></textarea>
+
+            <label for="address">Household Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="careRecipient">Care Recipient Name & Age</label>
+            <input type="text" id="careRecipient" name="careRecipient" required>
+
+            <label for="medical">Primary Diagnosis / Reason for Care</label>
+            <textarea id="medical" name="medical" rows="2"></textarea>
+
+            <label for="mobility">Mobility & Cognitive Status</label>
+            <textarea id="mobility" name="mobility" rows="2"></textarea>
+
+            <label for="trigger">Triggering Event (What prompted you to seek help?)</label>
+            <textarea id="trigger" name="trigger" rows="3"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2026 Regency Care Group, LLC. All rights reserved.</p>
+        <p style="font-size:0.8rem;">The domestic workers referred by this agency are not employees of this agency.</p>
+    </footer>
+</body>
+</html>

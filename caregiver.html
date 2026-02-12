@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Network – Regency Care Group</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="assets/logo.png" alt="Regency Care Group"></a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="client.html">Become a Client</a></li>
+            <li><a href="caregiver.html" class="active">Join Our Network</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header style="background-image:url('assets/hero.png');min-height:40vh;">
+        <h1>Join Our Network</h1>
+        <p>Are you a caregiver committed to relational excellence? Let’s connect.</p>
+    </header>
+    <section>
+        <h2>What We Look For</h2>
+        <p>We welcome caregivers with at least three years of professional experience who embody empathy, accountability and emotional intelligence. We ask our applicants to reflect deeply on past challenges and growth. If you’re passionate about creating lasting relationships, we want to meet you.</p>
+    </section>
+    <section>
+        <h2>Application Form</h2>
+        <form action="mailto:info@regencycaregroup.com" method="post" enctype="text/plain">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="experience">Years of Caregiving Experience</label>
+            <input type="number" id="experience" name="experience" min="0" required>
+
+            <label for="certs">Certifications (CNA, HHA, CPR, etc.)</label>
+            <textarea id="certs" name="certs" rows="2"></textarea>
+
+            <label for="essay1">Describe a time when a client or their family was deeply unhappy with you. What happened and what did you learn?</label>
+            <textarea id="essay1" name="essay1" rows="4" required></textarea>
+
+            <label for="essay2">Tell us about a client you struggled to connect with. What made it hard and what did you do?</label>
+            <textarea id="essay2" name="essay2" rows="4" required></textarea>
+
+            <label for="essay3">What is the most emotionally challenging part of this work for you and how do you care for yourself?</label>
+            <textarea id="essay3" name="essay3" rows="4" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2026 Regency Care Group, LLC. All rights reserved.</p>
+        <p style="font-size:0.8rem;">The domestic workers referred by this agency are not employees of this agency.</p>
+    </footer>
+</body>
+</html>

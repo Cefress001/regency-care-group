@@ -1,0 +1,225 @@
+/* Global styles for Regency Care Group website */
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #002f5f; /* deep navy */
+  --secondary-color: #c2a16d; /* warm gold */
+  --bg-color: #f6f6f2; /* off white */
+  --text-color: #002f5f;
+  --light-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color);
+  background: var(--bg-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  position: relative;
+  min-height: 60vh;
+  color: var(--light-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #b08d59;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+nav img {
+  height: 45px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--light-text);
+  font-weight: 600;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* Section styles */
+section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+section p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.75rem;
+}
+
+/* Pricing table */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.pricing-table th,
+.pricing-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.pricing-table th {
+  background: var(--primary-color);
+  color: var(--light-text);
+}
+
+.pricing-table tr:nth-child(even) {
+  background: #f0f3f7;
+}
+
+/* Forms */
+form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input,
+form textarea,
+form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+form button {
+  width: fit-content;
+  background: var(--primary-color);
+  color: var(--light-text);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+form button:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  background: var(--primary-color);
+  color: var(--light-text);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header h1 { font-size: 2.2rem; }
+  header p { font-size: 1rem; }
+  nav ul { gap: 0.5rem; }
+  nav a { font-size: 0.9rem; }
+}
