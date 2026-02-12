@@ -1,16 +1,29 @@
-/* Global styles for Regency Care Group website */
+/*
+ * Regency Care Group – Classic Newport Elegance Theme
+ *
+ * This stylesheet defines a refined, warm visual system inspired by classic
+ * Newport luxury. The palette revolves around deep navy, soft gold and
+ * ivory neutrals. Generous spacing, elegant typography and subtle accents
+ * create a high‑trust atmosphere without overwhelming visitors. All core
+ * components—navigation, hero, trust strip, pillar grid, timeline, service
+ * categories, testimonials, call‑to‑action panels and footer—are styled here.
+ */
 
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 
+/* Colour and typographic variables */
 :root {
-  --primary-color: #002f5f; /* deep navy */
-  --secondary-color: #c2a16d; /* warm gold */
-  --bg-color: #f6f6f2; /* off white */
-  --text-color: #002f5f;
-  --light-text: #ffffff;
+  --navy: #002e5d;          /* primary deep navy */
+  --gold: #b59c77;          /* muted warm gold */
+  --gold-hover: #a6895b;    /* darker gold for hovers */
+  --ivory: #f5f2ec;         /* warm off‑white background */
+  --stone: #ebe6dd;         /* light stone panel backgrounds */
+  --text-color: var(--navy);
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Open Sans', sans-serif;
 }
 
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,240 +31,377 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  background: var(--ivory);
   color: var(--text-color);
-  background: var(--bg-color);
+  font-family: var(--body-font);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/*
- * Hero / page header styling
- *
- * By default the header uses the primary hero image stored in the assets
- * directory. An overlay is applied via a pseudo-element to improve text
- * readability and give the hero more depth. The header is positioned
- * relative so that the overlay and content stack correctly.
- */
-header {
-  position: relative;
-  min-height: 60vh;
-  color: var(--light-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  background-image: url('assets/hero.png');
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-
-/* Dark overlay to improve contrast on hero images */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-}
-
-/* Place header content above the overlay */
-header > * {
-  position: relative;
-  z-index: 1;
-}
-
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-header p {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.btn-primary {
-  display: inline-block;
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.btn-primary:hover {
-  background: #b08d59;
-}
-
+/* Navigation bar */
 nav {
-  position: absolute;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   padding: 1rem 2rem;
+  background: rgba(0, 46, 93, 0.85);
+  backdrop-filter: blur(6px);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 10;
-  /* Semi-transparent backdrop so links remain legible over the hero image */
-  background: rgba(0, 47, 95, 0.6);
-  backdrop-filter: blur(4px);
+  justify-content: space-between;
+  z-index: 1000;
 }
 
-nav img {
-  height: 45px;
+nav .logo img {
+  height: 48px;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  list-style: none;
 }
 
-nav a {
-  color: var(--light-text);
+nav ul li a {
+  color: #ffffff;
   font-weight: 600;
-  padding: 0.5rem;
-  transition: color 0.3s;
+  padding: 0.25rem 0;
+  position: relative;
 }
 
-/* Highlight the current page in the navigation */
-nav a.active {
-  color: var(--secondary-color);
-  border-bottom: 2px solid var(--secondary-color);
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--gold);
 }
 
-nav a:hover {
-  color: var(--secondary-color);
+/* Primary CTA in the nav */
+.nav-cta {
+  margin-left: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--gold);
+  color: var(--navy);
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-/* Section styles */
+.nav-cta:hover {
+  background: var(--gold-hover);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-image: url('assets/hero.jpg'); /* hero photograph of coastal lighthouse */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Overlay to ensure contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 46, 93, 0.65);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-family: var(--heading-font);
+  font-size: 2.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 1.2rem 0;
+}
+
+.hero-bullets li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.hero .microline {
+  font-size: 0.8rem;
+  margin-top: 0.8rem;
+  color: #dcdcdc;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--gold-hover);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--gold);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Generic section wrapper */
 section {
   padding: 4rem 2rem;
   max-width: 1100px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--navy);
+}
+
+/* Trust strip styles */
+.trust-strip {
+  background: var(--stone);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.trust-strip .trust-item {
+  padding: 0.3rem 0.5rem;
+  border-right: 1px solid var(--gold);
+}
+
+.trust-strip .trust-item:last-child {
+  border-right: none;
+}
+
+/* Pillar section */
+.pillars .pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.pillar-item {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
-section p {
+.pillar-item .fa {
+  font-size: 2.2rem;
+  color: var(--gold);
   margin-bottom: 1rem;
-  font-size: 1rem;
 }
 
-.card-grid {
+.pillar-item h3 {
+  font-family: var(--heading-font);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+
+.pillar-item p {
+  font-size: 1rem;
+  color: var(--navy);
+}
+
+/* Timeline preview */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.step h3 {
+  font-family: var(--heading-font);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: var(--navy);
+}
+
+/* Who We Serve */
+.who-serve .serve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.serve-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.serve-item .fa {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.serve-item h3 {
+  font-family: var(--heading-font);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+
+.serve-item p {
+  font-size: 0.95rem;
+  color: var(--navy);
+}
+
+/* Testimonials */
+.testimonials .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.testimonials blockquote {
+  background: #ffffff;
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem;
+  border-radius: 4px;
+  font-style: italic;
+  position: relative;
+  color: var(--navy);
 }
 
-.card h3 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 0.75rem;
-}
-
-/* Icon styling for cards */
-.icon {
-  font-size: 2rem;
-  color: var(--secondary-color);
-  margin-bottom: 0.5rem;
+.testimonials cite {
   display: block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--navy);
 }
 
-/* Pricing table */
-.pricing-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-.pricing-table th,
-.pricing-table td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
+/* Contact call to action */
+.contact-cta {
+  background: var(--stone);
   text-align: center;
+  padding: 3rem 2rem;
 }
 
-.pricing-table th {
-  background: var(--primary-color);
-  color: var(--light-text);
+.contact-cta h2 {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--navy);
 }
 
-.pricing-table tr:nth-child(even) {
-  background: #f0f3f7;
-}
-
-/* Forms */
-form {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-form label {
-  font-weight: 600;
-}
-
-form input,
-form textarea,
-form select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.contact-cta p {
   font-size: 1rem;
-  width: 100%;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
 }
 
-form button {
-  width: fit-content;
-  background: var(--primary-color);
-  color: var(--light-text);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
+.contact-cta .cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-form button:hover {
-  background: var(--secondary-color);
-  color: var(--primary-color);
+.contact-cta .btn-primary,
+.contact-cta .btn-secondary {
+  margin: 0;
 }
 
 /* Footer */
 footer {
-  background: var(--primary-color);
-  color: var(--light-text);
+  background: var(--navy);
+  color: #ffffff;
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
@@ -261,10 +411,23 @@ footer p {
   margin-bottom: 0.5rem;
 }
 
+footer small {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  header h1 { font-size: 2.2rem; }
-  header p { font-size: 1rem; }
-  nav ul { gap: 0.5rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  nav ul { gap: 1rem; }
   nav a { font-size: 0.9rem; }
+  .pillar-item, .step, .serve-item, .testimonials blockquote { padding: 1.5rem; }
+  section { padding: 3rem 1rem; }
 }

@@ -4,35 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Become a Client – Regency Care Group</title>
+    <meta name="description" content="Ready to hire a trusted independent caregiver? Complete our brief intake form to help Regency Care Group understand your needs and schedule a consultation.">
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRNalcxzYPwv9PuXbZk+/wQ2uUalj+e4bG6BTul6QU98fcOQsDp6S71KdQf8p6+SG4GTTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="index.html"><img src="assets/logo.png" alt="Regency Care Group"></a>
+        <a class="logo" href="index.html"><img src="assets/logo.png" alt="Regency Care Group logo"></a>
         <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="process.html">Process</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="client.html" class="active">Become a Client</a></li>
-            <li><a href="caregiver.html">Join Our Network</a></li>
-            <li><a href="resources.html">Resources</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="process.html">How It Works</a></li>
+            <li><a href="services.html">Investment</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <a href="contact.html" class="btn-primary nav-cta">Schedule</a>
     </nav>
-    <header style="min-height:40vh;">
-        <h1>Become a Client</h1>
-        <p>Tell us about your family so we can begin designing a compatible match.</p>
+    <!-- Hero -->
+    <header class="hero" style="min-height:50vh;">
+        <div class="hero-content">
+            <h1>Become a Client</h1>
+            <p>Tell us about your family so we can begin matching you with an exceptional caregiver.</p>
+        </div>
     </header>
+    <!-- Intake Instructions -->
     <section>
         <h2>Who We Serve</h2>
-        <p>We work with affluent families in Orange County seeking private in‑home care for aging parents (70+), adults with special needs, chronic conditions, or post‑surgical recovery. Our clients are done with résumé matchers and want someone who understands relational chemistry.</p>
-        <p>If this sounds like you, complete the form below to schedule a discovery call. We’ll use the information to prepare for our 90‑minute assessment.</p>
+        <p>We work with families in Coastal Orange County who value stability, discretion and high‑touch service. If this sounds like you, please complete the brief intake form below so we can prepare for our consultation.</p>
     </section>
+    <!-- Intake Form -->
     <section>
-        <h2>Client Intake Form</h2>
-        <form action="mailto:info@regencycaregroup.com" method="post" enctype="text/plain">
+        <h2>Client Intake</h2>
+        <form action="mailto:info@regencycaregroup.com" method="post" enctype="text/plain" style="max-width:700px;margin:auto;">
             <label for="decisionMaker">Primary Decision‑Maker Name</label>
             <input type="text" id="decisionMaker" name="decisionMaker" required>
 
@@ -48,30 +52,20 @@
             <label for="bestTime">Best Times to Reach You</label>
             <input type="text" id="bestTime" name="bestTime">
 
-            <label for="others">Other Decision‑Influencers (Names & Relationships)</label>
-            <textarea id="others" name="others" rows="2"></textarea>
-
-            <label for="address">Household Address</label>
-            <input type="text" id="address" name="address" required>
-
             <label for="careRecipient">Care Recipient Name & Age</label>
             <input type="text" id="careRecipient" name="careRecipient" required>
 
-            <label for="medical">Primary Diagnosis / Reason for Care</label>
-            <textarea id="medical" name="medical" rows="2"></textarea>
+            <label for="needs">Brief Description of Needs</label>
+            <textarea id="needs" name="needs" rows="3" required></textarea>
 
-            <label for="mobility">Mobility & Cognitive Status</label>
-            <textarea id="mobility" name="mobility" rows="2"></textarea>
-
-            <label for="trigger">Triggering Event (What prompted you to seek help?)</label>
-            <textarea id="trigger" name="trigger" rows="3"></textarea>
-
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn-primary">Submit</button>
         </form>
     </section>
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Regency Care Group, LLC. All rights reserved.</p>
-        <p style="font-size:0.8rem;">The domestic workers referred by this agency are not employees of this agency.</p>
+        <p>Serving Coastal Orange County • Concierge caregiver referral service</p>
+        <small>The domestic workers referred by this agency are not employees of this agency. Clients hire and supervise their independent caregivers and assume all employer obligations.</small>
     </footer>
 </body>
 </html>
