@@ -9,14 +9,15 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRNalcxzYPwv9PuXbZk+/wQ2uUalj+e4bG6BTul6QU98fcOQsDp6S71KdQf8p6+SG4GTTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body class="watermark">
     <!-- Navigation -->
     <nav>
         <a class="logo" href="index.html"><img src="assets/logo.png" alt="Regency Care Group logo"></a>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="process.html">How It Works</a></li>
-            <li><a href="services.html">Investment</a></li>
+            <!-- Rename Investment to Services for clarity -->
+            <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="contact.html" class="btn-primary nav-cta">Schedule</a>
@@ -28,38 +29,50 @@
             <p>Tell us about your family so we can begin matching you with an exceptional caregiver.</p>
         </div>
     </header>
-    <!-- Intake Instructions -->
+    <!-- Intake Section wrapped in panel grid -->
     <section>
-        <h2>Who We Serve</h2>
-        <p>We work with families in Coastal Orange County who value stability, discretion and high‑touch service. If this sounds like you, please complete the brief intake form below so we can prepare for our consultation.</p>
-    </section>
-    <!-- Intake Form -->
-    <section>
-        <h2>Client Intake</h2>
-        <form action="mailto:info@regencycaregroup.com" method="post" enctype="text/plain" style="max-width:700px;margin:auto;">
-            <label for="decisionMaker">Primary Decision‑Maker Name</label>
-            <input type="text" id="decisionMaker" name="decisionMaker" required>
+        <div class="panel-grid">
+            <!-- Left panel describing who we serve -->
+            <div class="panel panel--wide">
+                <h2>Who We Serve</h2>
+                <div class="panel-divider"></div>
+                <div class="prose">
+                    <p>We work with families in Coastal Orange County who value stability, discretion and high‑touch service. If this sounds like you, please complete the brief intake form so we can prepare for our consultation.</p>
+                </div>
+            </div>
+            <!-- Right panel containing the intake form -->
+            <aside class="panel panel--tight">
+                <h2>Client Intake</h2>
+                <div class="panel-divider"></div>
+                <div class="prose">
+                    <p>Please complete the form below and we will reach out within 24 hours to schedule your consultation.</p>
+                </div>
+                <form action="mailto:info@regencycaregroup.com" method="post" enctype="text/plain">
+                    <label for="decisionMaker">Primary Decision‑Maker Name</label>
+                    <input type="text" id="decisionMaker" name="decisionMaker" required>
 
-            <label for="relation">Relationship to Care Recipient</label>
-            <input type="text" id="relation" name="relation" required>
+                    <label for="relation">Relationship to Care Recipient</label>
+                    <input type="text" id="relation" name="relation" required>
 
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
 
-            <label for="bestTime">Best Times to Reach You</label>
-            <input type="text" id="bestTime" name="bestTime">
+                    <label for="bestTime">Best Times to Reach You</label>
+                    <input type="text" id="bestTime" name="bestTime">
 
-            <label for="careRecipient">Care Recipient Name & Age</label>
-            <input type="text" id="careRecipient" name="careRecipient" required>
+                    <label for="careRecipient">Care Recipient Name & Age</label>
+                    <input type="text" id="careRecipient" name="careRecipient" required>
 
-            <label for="needs">Brief Description of Needs</label>
-            <textarea id="needs" name="needs" rows="3" required></textarea>
+                    <label for="needs">Brief Description of Needs</label>
+                    <textarea id="needs" name="needs" rows="3" required></textarea>
 
-            <button type="submit" class="btn-primary">Submit</button>
-        </form>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </form>
+            </aside>
+        </div>
     </section>
     <!-- Footer -->
     <footer>
